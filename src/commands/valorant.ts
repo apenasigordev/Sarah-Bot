@@ -64,6 +64,11 @@ export default class  extends Command {
 						  inline: true
 					  },
 					  {
+						  name: `🎯 Damage (${data.weaponStats.damageRanges[1].rangeStartMeters}m - ${data.weaponStats.damageRanges[1].rangeEndMeters}m)`,
+						  value: `👦 ${data.weaponStats.damageRanges[1].headDamage}\n🧍 ${data.weaponStats.damageRanges[1].bodyDamage}\n🦵 ${data.weaponStats.damageRanges[1].legDamage}`,
+						  inline: true
+					  },
+					  {
 						  name: "🏷️ Price",
 						  value: data.shopData.cost,
 						  inline: true
