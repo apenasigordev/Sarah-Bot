@@ -1,0 +1,12 @@
+{
+  "template": "typescript",
+  "version": 4,
+  "handlers": {
+    "commands": "src/commands",
+    "events": "src/events",
+    "inhibitors": null,
+    "buttons": null,
+    "modals": null,
+    "selectMenus": null
+  }
+}
