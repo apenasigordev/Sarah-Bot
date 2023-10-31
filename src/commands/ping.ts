@@ -10,8 +10,7 @@ export class PingCommand extends Command {
       type: "SLASH_COMMAND",
       category: "Misc",
       cooldown: 3,
-	  userPermissions: ["SendMessages"],
-	  channel: "GUILD"
+	  channel: "GLOBAL"
     });
   }
 
