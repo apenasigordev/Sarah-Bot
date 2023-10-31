@@ -31,7 +31,7 @@ export default class  extends Command {
 
   async execute(interaction: CommandInteraction) {
 	  await interaction.deferReply()
-	  const req = await fetch(`http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${process.env.LAST_FM}&artist=${encodeURI(interaction.options.getString("query"))}&format=json`)
+	  const req = await fetch(`http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${process.env.LAST_FM}&artist=${interaction.options.getString("query").split("-")[0]}&track=${interaction.options.getString("query").split("-")[1]}&format=json`)
 	  const data = await req.json() as any;
 	  if (data.error) {
 		  await interaction.editReply({
@@ -66,7 +66,7 @@ export default class  extends Command {
 				  inline: true
 			  }, {
 				  name: "🎧 Listeners",
-				  value: humanize.compactInteger(data.track.listeners, 1e3),
+				  value: humanize.compactInteger(data.track.listeners, 1),
 				  inline: true
 			  }],
 			  color: 0x22eeaa
@@ -80,7 +80,7 @@ export default class  extends Command {
     if (focusedOption.name === "query" && focusedOption.value) {
 		const req = await fetch(`https://ws.audioscrobbler.com/2.0/?method=track.search&track=${encodeURI(focusedOption.value)}&api_key=` + process.env.LAST_FM + "&format=json")
 		const data = await req.json()
-		choices = data.results.trackmatches.track.map((x: any) => ({ name: `${x.name} - ${x.artist}`, value: `${x.artist}&track=${x.name}`}))
+		choices = data.results.trackmatches.track.map((x: any) => ({ name: `${x.name} - ${x.artist}`, value: `${x.artist}-${x.name}`}))
 	}
 	interaction.respond(choices.slice(0,25))
   }

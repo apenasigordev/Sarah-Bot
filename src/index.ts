@@ -24,7 +24,7 @@ const client = new ShewenyClient({
       directory: './events',
     },
   },
-  mode : "development", // Change to production for production bot
+  mode : "production", // Change to production for production bot
 });
 
 client.login(process.env.DISCORD_TOKEN);

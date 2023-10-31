@@ -11,11 +11,16 @@ export default class  extends Event {
 
   execute(client: ShewenyClient) {
       console.log("Event called !");
+	  //client.user.setStatus("DND")
 	  client.user.setPresence({
-		  activities: [{
+		  status: "idle",
+		  activities: [/*{
 			  name: "Custom Status",
-			  state: "😴 Estou indo dormir",
+			  state: "Let's have some fun, huh?",
 			  type: 4
+		  }, */{
+			  name: "Unavailable for some hours",
+			  state: "Sarah will be under maintenance in 30/10, at 20:30 - 21:30 (Brazilian Time)"
 		  }]
 	  })
   }

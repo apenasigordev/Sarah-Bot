@@ -55,7 +55,7 @@ export default class  extends Command {
 				  fields: [
 					  {
 						  name: "🔥 Fire Rate", 
-						  value: data.weaponStats.fireRate,
+						  value: `${data.weaponStats.fireRate}`,
 						  inline: true
 					  },
 					  {
@@ -70,12 +70,12 @@ export default class  extends Command {
 					  },
 					  {
 						  name: "🏷️ Price",
-						  value: data.shopData.cost,
+						  value: `${data.shopData.cost}`,
 						  inline: true
 					  },
 					  {
 						  name: "📁 Category",
-						  value: data.shopData.category,
+						  value: `${data.shopData.category}`,
 						  inline: true
 					  }
 				  ],
