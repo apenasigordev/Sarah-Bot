@@ -17,6 +17,6 @@ export default class  extends Command {
   }
 
   async execute(interaction: CommandInteraction) {
-    await interaction.reply({ content: `\`\`\`\nAbout our project\nSarah is a fun, comedy and (soon) RPG bot that makes your server more alive, with commands like /memes, /animals, /blablabla, etc. Make more, and more, and more, and more funny your server!!!\n\n- Owner: Igor (@igorwastaken)\n- Contributors: Hamburger (@bwrbur)\n- Github: https://github.com/apenasigordev/Sarah-Bot\n- Discord server: Nothing yet\n\nI'm in ${humanize.compactInteger(interaction.client.guilds.cache.size, 1)} servers.\nThat's it for now, thanks.\`\`\`` });
+    await interaction.reply({ content: `\`\`\`\nAbout our project\nSarah is a fun, comedy and (soon) RPG bot that makes your server more alive, with commands like /memes, /animals, /blablabla, etc. Make more, and more, and more, and more funny your server!!!\n\n- Owner: Igor (@igorwastaken)\n- Contributors: Hamburger (@bwrbur)\n- Github: https://github.com/apenasigordev/Sarah-Bot\n- Discord server: In construction\n\nI'm in ${humanize.compactInteger(interaction.client.guilds.cache.size, 1)} servers.\nThat's it for now, thanks.\`\`\`` });
   }
 };
